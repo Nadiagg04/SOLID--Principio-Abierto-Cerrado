@@ -1,0 +1,37 @@
+from abc import ABC, abstractmethod
+
+class Operacion(ABC):
+  @abstractmethod
+  def operar(self, a, b):
+    pass
+
+class Sumar(Operaciones):
+  def operar(self, a, b):
+    return a + b
+
+class Restar(Operaciones):
+  def operar(self, a, b):
+    return a - b
+
+class Multiplicar(Operaciones):
+    def operar(self, a, b):
+      return a * b
+
+class Dividir(Operaciones):
+    def operar(self, a, b):
+      if b == 0:
+        raise ValueError ( "Error, introduzca un número divisor que no sea 0")
+      return a / b
+
+class Calculadora:
+   def __init__(self):
+      self.operaciones = {}
+
+    def crear_operaciones(self, nombre , operaciones):
+      self.operaciones[nombre] = operacion
+
+def calculacion(self, nombre, a, b):
+  if nombre not in self.operaciones:
+    raise ValueError(f"Operación '{nombre}' no encontrada.")
+  operacion = self.operaciones[nombre]
+  return operacion.ejecutar(a,b)
