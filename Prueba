@@ -5,19 +5,19 @@ class Operacion(ABC):
   def operar(self, a, b):
     pass
 
-class Sumar(Operaciones):
+class Sumar(Operacion):
   def operar(self, a, b):
     return a + b
 
-class Restar(Operaciones):
+class Restar(Operacion):
   def operar(self, a, b):
     return a - b
 
-class Multiplicar(Operaciones):
+class Multiplicar(Operacion):
     def operar(self, a, b):
       return a * b
 
-class Dividir(Operaciones):
+class Dividir(Operacion):
     def operar(self, a, b):
       if b == 0:
         raise ValueError ( "Error, introduzca un número divisor que no sea 0")
@@ -27,7 +27,7 @@ class Calculadora:
    def __init__(self):
       self.operaciones = {}
 
-    def crear_operaciones(self, nombre , operaciones):
+def crear_operaciones(self, nombre , operacion):
       self.operaciones[nombre] = operacion
 
 def calculacion(self, nombre, a, b):
